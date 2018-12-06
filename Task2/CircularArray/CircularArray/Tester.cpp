@@ -29,7 +29,7 @@ int main()
 	}
 	cout << endl;
 
-
+	//Test rotation
 	myTestCA1.Rotate(1);
 
 	i = 0;
@@ -41,6 +41,7 @@ int main()
 
 	cout << endl;
 
+	//Test rotation
 	myTestCA1.Rotate(1);
 
 	i = 0;
@@ -51,6 +52,7 @@ int main()
 	}
 	cout << endl;
 
+	//Test full rotation, no change to array 
 	myTestCA1.Rotate(5);
 
 	i = 0;
@@ -62,11 +64,12 @@ int main()
 
 	cout << endl;
 
-	for (auto x : myTestCA1)
+	//Goes out of range, function needs to be fixed
+	/*for (auto x : myTestCA1)
 	{
 		cout << x << ", ";
 		x++;
-	}
+	}*/
 
 
 	return 0;

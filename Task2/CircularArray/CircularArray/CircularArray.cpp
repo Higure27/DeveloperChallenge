@@ -41,29 +41,8 @@ void CircularArray<T>::RemoveAt(int index)
 	//TODO: Remove item-> NULL
 }
 
-/// Rotates the circular array by the specified value
-/*template<class T>
-void CircularArray<T>::Rotate(int numRotaion)
-{
-	int moveHeadBy = numRotaion % capacity;
-	if (head - moveHeadBy <= 0)
-	{ 
-		head -= moveHeadBy;
-	}
-	else
-	{
-		head = head + (capacity - moveHeadBy);
-	}
 
-	if (head == 0)
-	{
-		tail = capacity - 1;
-	}
-	else
-	{
-		tail = head - 1;
-	}
-}*/
+
 
 ///Functions retuns the index of the first occurence of the searched item, otherwise returns 0
 template<class T>
