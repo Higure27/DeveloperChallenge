@@ -1,0 +1,7 @@
+D:\DeveloperChallenge\BonusTask1\Dependency\Dependency\bin\Debug\Dependency.exe.config
+D:\DeveloperChallenge\BonusTask1\Dependency\Dependency\bin\Debug\Dependency.exe
+D:\DeveloperChallenge\BonusTask1\Dependency\Dependency\bin\Debug\Dependency.pdb
+D:\DeveloperChallenge\BonusTask1\Dependency\Dependency\obj\Debug\Dependency.csprojAssemblyReference.cache
+D:\DeveloperChallenge\BonusTask1\Dependency\Dependency\obj\Debug\Dependency.csproj.CoreCompileInputs.cache
+D:\DeveloperChallenge\BonusTask1\Dependency\Dependency\obj\Debug\Dependency.exe
+D:\DeveloperChallenge\BonusTask1\Dependency\Dependency\obj\Debug\Dependency.pdb
