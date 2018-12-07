@@ -7,12 +7,11 @@ class CircularArray
 private:
 
 	T *items;
+	T* rotatedItems; 
 	int capacity;
 	int count;
 	int head;
 	int tail;
-	T *begin_;
-	T *end_;
 
 public:
 	
@@ -21,30 +20,48 @@ public:
 	{
 		capacity = size;
 		items = new T[capacity];
+		rotatedItems = new T[capacity];
 		head = 0;
 		tail = capacity - 1;
 		count = 0;
 		for (int i = 0; i < capacity; i++)
 		{
 			items[i] = NULL;
+			rotatedItems[i] = NULL;
 		}
-		begin_ = &items[head];
-		end_ = &items[tail];
-
 	}
 
 	~CircularArray()
 	{
 		delete items;
+		delete rotatedItems;
 	}
 
 	///used for itereting 
-	T*  begin() const noexcept { return &items[head]; }//begin_}
-	T*  end() const noexcept { return &items[tail]; }//end_ }
+	T*  begin() {
+		int rotatedIndex = 0;
+		for (int i = 0; i < capacity; i++)
+		{
+			rotatedIndex = (i + head) % capacity;
+			rotatedItems[i] = items[rotatedIndex];
+		}
+		return &rotatedItems[0];
+	}
+	T*  end() const noexcept { return &rotatedItems[capacity]; }//end_ }
 
-	//Not implemented 
-	void Add(T item);//if full rotate and overwrite value at spot [0]
-	void RemoveAt(int location);
+
+	//returns false if specified spot contains a NULL
+	bool RemoveAt(int index)
+	{
+		
+		int rotatedIndex = (index + head) % capacity;
+		if (items[rotatedIndex] != NULL)
+		{
+			items[rotatedIndex] = NULL;
+			return true;
+		}
+		return false;
+	}
 
 	/// Rotates the circular array by the specified value
 	void Rotate(int numRotaion)
@@ -68,10 +85,38 @@ public:
 			tail = head - 1;
 		}
 	}
-	//TODO: Return first occurence of an item 
-	int Contains(T item) const;
-	/// TODO: Return current amount of items in array
-	int Count() const;
+	// Return first occurence of an item, if item not found returns -1
+	int Contains(T item) const
+	{
+		int rotatedIndex = 0;
+		for (int i = 0; i < capacity; i++)
+		{
+			rotatedIndex = (i + head) % capacity;
+			if (items[rotatedIndex] == item)
+			{
+				return rotatedIndex;
+			}
+		}
+		return -1;
+	}
+
+
+	///Function returns count of non-null items within the circular array 
+	int Count() 
+	{
+		count = 0;
+		int rotatedIndex = 0;
+		for (int i = 0; i < capacity; i++)
+		{
+			rotatedIndex = (i + head) % capacity;
+			if (items[rotatedIndex] != NULL)
+			{
+				count++;
+			}
+		}
+
+		return count; 
+	}
 	
 	/// Returns how many items the circular array can contain 
 	int GetSize() const
@@ -85,8 +130,6 @@ public:
 		int rotatedIndex = (index + head) % capacity;
 		return items[rotatedIndex];
 	}
-
-
 
 };
 

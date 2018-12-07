@@ -25,27 +25,17 @@ CircularArray<T>::~CircularArray()
 	//clean();
 }*/
 
-template<class T>
-void CircularArray<T>::Add(T item)
-{
-	if (count < capacity)
-	{
-		count++;
-	}
-}
-
 ///Removes the item at the given index according to current rotation
-template<class T>
-void CircularArray<T>::RemoveAt(int index)
+/*template<class T>
+bool CircularArray<T>::RemoveAt(int index)
 {
-	//TODO: Remove item-> NULL
-}
+}*/
 
 
 
 
 ///Functions retuns the index of the first occurence of the searched item, otherwise returns 0
-template<class T>
+/*template<class T>
 int CircularArray<T>::Contains(T item) const
 {
 	for (int i = 0; i < capacity; i++)
@@ -56,14 +46,14 @@ int CircularArray<T>::Contains(T item) const
 		}
 	}
 	return -1;
-}
+}*/
 
 ///Function returns count of non-null items within the circular array 
-template<class T>
+/*template<class T>
 int CircularArray<T>::Count() const
 {
 	return count;
-}
+}*/
 
 /// Returns how many items the circular array can contain 
 /*template<class T>

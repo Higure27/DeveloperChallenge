@@ -7,13 +7,17 @@ using namespace std;
 int main()
 {
 	CircularArray<int> myTestCA1(5);
+	int testArray[] = { 1,2,3,4,5 };
 	int size = myTestCA1.GetSize();
 
 	myTestCA1[0] = 1;
 	myTestCA1[1] = 2;
+	cout << myTestCA1.Count() << endl;
 	myTestCA1[2] = 3;
 	myTestCA1[3] = 4;
 	myTestCA1[4] = 5;
+
+	cout << myTestCA1.Count() << endl;
 
 	cout << myTestCA1[0] << endl;
 	cout << myTestCA1[1] << endl;
@@ -64,12 +68,15 @@ int main()
 
 	cout << endl;
 
-	//Goes out of range, function needs to be fixed
-	/*for (auto x : myTestCA1)
+
+	for (auto x : myTestCA1)
 	{
 		cout << x << ", ";
-		x++;
-	}*/
+		x = 3;
+		cout << x << ",";
+	}
+	
+	cout << endl;
 
 
 	return 0;
