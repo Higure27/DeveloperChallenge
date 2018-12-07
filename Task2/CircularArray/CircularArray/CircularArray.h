@@ -50,14 +50,16 @@ public:
 	T*  end() const noexcept { return &rotatedItems[capacity]; }//end_ }
 
 
-	//returns false if specified spot contains a NULL
+	//returns false if specified spot contains a NULL or if index is negetive
 	bool RemoveAt(int index)
 	{
-		
-		int rotatedIndex = (index + head) % capacity;
-		if (items[rotatedIndex] != NULL)
+		if (index < 0)
 		{
-			items[rotatedIndex] = NULL;
+			return false;
+		}
+		if (items[index] != NULL)
+		{
+			items[index] = NULL;
 			return true;
 		}
 		return false;
@@ -125,6 +127,7 @@ public:
 	}
 	
 	/// returns the value of the indexed item according to current rotation
+	//might need to add functionality for negetive index
 	T& operator[](int index)
 	{
 		int rotatedIndex = (index + head) % capacity;
